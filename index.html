@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Portfolio Website - Laura Kuo</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.cdnfonts.com/css/noto-sans-display-2" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/00043b2aed.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+<!----------------- about ----------------->
+        <div id="about">
+            <div class="container">
+                <nav>
+                    <p class="logo">Laura's Portfolio</p>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="intro">
+                    <div>
+                        <h1>Hi! I'm Laura Kuo.</h1>
+                        <p>I'm currently studying at the University of Wisconsin - Madison, where I am pursuing 
+                        majors in Computer Science, Data Science, and Economics. I'm actively seeking <u>full-time 
+                        positions and internships in software development</u>. <br>If you're interested in collaborating 
+                        or would like to discuss potential opportunities, please feel free to reach out!
+                        <br> <br>Hobbies: guitar playing, games of mahjong with friends, taking walks by the lakeside
+                        </p>
+                    </div>
+                     <img src="images/profile.png"/>
+                </div>
+                <div id="joke-section">
+                    <h3>Joke of the day...</h1>
+                    <div id="joke-setup">Loading a joke...</div>
+                    <div id="joke-punchline"></div>
+                </div>
+            </div>
+        </div>
+<!----------------- projects ----------------->
+        <div id="projects">
+            <div class="container">
+                <h1 class = "subtitle">My Projects</h1>
+                <div class="project-list">
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Custom Shell</h2>
+                        <p>This project involves developing a command-line interpreter called the Wisconsin Shell (wsh), which supports 
+                            both interactive and batch modes for executing commands. The shell implements essential features like command 
+                            execution, piping, environment and shell variables, command history, and built-in commands such as cd, export, 
+                            and history, providing a simplified yet functional shell experience similar to Unix shells.</p>
+                        <a href="https://drive.google.com/drive/folders/1MxBo0OfSEA8dOQNiwaAkqjuzfjxuEYIC?usp=sharing" target="_blank">Source Code</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-crop"></i>
+                        <h2>xv6 Memory Mapping</h2>
+                        <p>This project involves implementing the wmap, wunmap, and wremap system calls in the xv6 operating system, 
+                            enabling efficient memory mapping, including support for anonymous and file-backed mappings. The project 
+                            also includes adding debugging tools through getwmapinfo and getpgdirinfo system calls, enhancing memory 
+                            management and the handling of page faults in xv6.</p>
+                        <a href="https://drive.google.com/drive/folders/1AiKzQ2zmUAfDlta1nWeuEzMnMHzC37Yk?usp=sharing" target="_blank">Source Code</a>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-app-store"></i>
+                        <h2>Ring Buffer Client-Server Model</h2>
+                        <p>Designed and implemented a multithreaded client-server model in C using file-backed shared memory for 
+                            efficient data exchange. Developed a concurrent Ring Buffer for high-throughput request handling and a 
+                            Request-status Board for real-time tracking, ensuring thread safety and performance under high concurrent loads.</p>
+                        <a href="https://drive.google.com/drive/folders/1IQxr4gZaoAqC6t7LH6XUVPZKuTUrvceM?usp=sharing" target="_blank">Source Code</a>
+                    </div>
+                </div>
+                <div id="quote-section">
+                    <h3>Quote of the day...</h3>
+                    <p id="quote-text">Loading a random quote...</p>
+                    <p id="quote-author"></p>
+                </div>
+            </div>
+        </div>
+<!----------------- tech news ----------------->
+        <div id="tech-news">
+            <div class="container">
+                <h2 class="subtitle">For Those Interested in Latest Tech News...</h2>
+                <ul id="news-grid"></ul>
+                <div id="cat-fact-section">
+                    <h3>Cat fact of the day...</h3>
+                    <p id="cat-fact-text">Loading a random cat fact...</p>
+                </div>
+            </div>
+        </div>
+
+<!----------------- contact ----------------->
+        <div id="contact">
+            <div class="container">
+                <h1 class = "subtitle">Contact Me</h1>
+                <div class="row">
+                    <div class="contact-left">
+                        <p><i class="fa-solid fa-paper-plane"></i>laurak10006@gmail.com</p>
+                        <p><i class="fa-solid fa-phone"></i>608-504-8560</p>
+                        <div class ="linked-in">
+                            <a href="https://www.linkedin.com/in/chia-chen-kuo/"><i class="fa-brands fa-linkedin"></i>Connect via LinkedIn</a>
+                        </div>
+                        
+                        <a href="/images/Laura_Kuo_Resume.pdf" download class="button">Download My Resume</a>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="button2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx3ywQgYE2yL3fCuDRkmU0-gYisYv76ywKhckEvulYXfO7iZoH0aH_DsNwTLBv63Z1V/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully!"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+          <script>
+            const jokeUrl = 'https://official-joke-api.appspot.com/random_joke';
+    
+            fetch(jokeUrl)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('joke-setup').innerText = data.setup;
+                    document.getElementById('joke-punchline').innerText = data.punchline;
+                })
+                .catch(error => {
+                    document.getElementById('joke-setup').innerText = 'Oops, something went wrong!';
+                    console.error('Error fetching joke:', error);
+                });
+        </script>
+        <script>
+            const apiKey = 'oLFazBVsDIE7BGlClFHYrPJpxD8Slnf1'; // Replace with your NY Times API key
+            const newsUrl = `https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=${apiKey}`;
+    
+            fetch(newsUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const newsList = document.getElementById('news-grid');
+                    data.results.slice(0, 6).forEach(article => {
+                        let li = document.createElement('li');
+                        li.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>`;
+                        newsList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Error fetching news data:', error));
+        </script>
+        <script>
+            function handleQuoteResponse(data) {
+                document.getElementById('quote-text').innerText = `"${data.quoteText}"`;
+                document.getElementById('quote-author').innerText = data.quoteAuthor ? `- ${data.quoteAuthor}` : '- Unknown';
+            }
+    
+            function fetchRandomQuote() {
+                const script = document.createElement('script');
+                script.src = 'https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=handleQuoteResponse';
+                document.body.appendChild(script);
+            }
+    
+            // Fetch the quote when the page loads
+            fetchRandomQuote();
+        </script>
+       <script>
+        const catFactUrl = 'https://meowfacts.herokuapp.com/';
+        const maxLength = 100; // Maximum length for the cat fact
+        const maxRetries = 5;  // Maximum number of retries
+
+        function fetchCatFact(retries = 0) {
+            fetch(catFactUrl)
+                .then(response => response.json())
+                .then(data => {
+                    let catFact = data.data[0];
+                    if (catFact.length > maxLength && retries < maxRetries) {
+                        // Retry fetching if the fact is too long and we haven't exceeded retries
+                        fetchCatFact(retries + 1);
+                    } else if (retries >= maxRetries) {
+                        // If maximum retries reached, truncate the fact
+                        catFact = catFact.substring(0, maxLength) + '...';
+                        document.getElementById('cat-fact-text').innerText = catFact;
+                    } else {
+                        // If the fact is within the length limit, display it
+                        document.getElementById('cat-fact-text').innerText = catFact;
+                    }
+                })
+                .catch(error => console.error('Error fetching cat fact:', error));
+        }
+
+        // Fetch the cat fact when the page loads
+        fetchCatFact();
+    </script>
+        <!-- <script>
+            const catFactUrl = 'https://meowfacts.herokuapp.com/';
+    
+            fetch(catFactUrl)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('cat-fact-text').innerText = data.data[0];
+                })
+                .catch(error => console.error('Error fetching cat fact:', error));
+        </script> -->
+    </body>
+</html>

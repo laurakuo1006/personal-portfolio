@@ -1,0 +1,336 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: Georgia, serif; */
+    font-family: 'Noto Sans Display', sans-serif;
+                                                                                        
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #080808;
+    color: #fff;
+
+}
+#about {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding: 10px 10%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo{
+    font-size: 30px;
+    color: #5C4033;
+}
+/* the tabs on the top */
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+
+}
+nav ul li a{
+    color: 	#5C4033;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+/* add hover effect */ 
+nav ul li a::after {
+    content: ' ';
+    width: 0;
+    height: 3px;
+    background: #5C4033;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
+.intro{
+    margin: 8%;
+    color: #5C4033;
+    display: flex;
+    flex-direction: row;
+}
+.intro h1{
+    font-size: 40px;
+}
+.intro p{
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 20px;
+    width: 370px;
+    line-height: 30px;
+}
+img {
+    height: 700px;
+    margin-top: -100px;
+}
+/*---------joke---------*/
+#joke-section {
+    position: absolute;
+    bottom: 20px; /* Adjust this value to move the joke section up or down */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #5C4033; /* Match the color theme */
+}
+
+#joke-setup {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#joke-punchline {
+    font-size: 1.1em;
+    color: gray;
+}
+
+/*---------projects---------*/
+#projects {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.container {
+    color: 	#5C4033;
+}
+.subtitle {
+    margin: 5%;
+    font-size: 40px;
+}
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.project-list div {
+    background: #fff;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-right: 10px;
+    opacity: 0.7;
+    border-radius: 25px;
+    transition: background-color 0.5s, transform 0.5s;
+}
+.project-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+
+}
+.project-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.project-list div a {
+    text-decoration: none;
+    color: #5C4033;
+    font-size: 15px;
+    margin-top: 10px;
+    text-decoration: underline;
+    display: inline-block;
+}
+.project-list div:hover {
+    background-color: #e1e6e7;
+    transform: translateY(-10px);
+}
+/*---------quote---------*/
+#quote-section {
+    position: absolute;
+    bottom: 20px; /* Adjusts the position from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #5C4033; /* Text color to match theme */
+    width: 80%; /* Optionally adjust width */
+}
+
+#quote-text {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#quote-author {
+    font-size: 1.1em;
+    color: gray; /* Optional: different color for author */
+}
+/*---------tech news---------*/
+#tech-news {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.container {
+    color: 	#5C4033;
+}
+.subtitle {
+    margin: 5%;
+    font-size: 40px;
+}
+#news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows, auto height */
+    gap: 50px; /* Space between grid items */
+    list-style-type: none;
+}
+
+#news-grid li {
+    background-color: #fff; /* White background */
+    padding: 20px;
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center the text */
+    font-size: 18px;
+    color: #5C4033; /* Text color matching the theme */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px; /* Make the height of the li match the height of the content */
+    opacity: 0.7;
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+#news-grid li:hover {
+    background-color: #e1e6e7;
+    transform: translateY(-10px);
+}
+
+#news-grid li a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+    font-size: 25px;
+}
+
+#news-grid li a:hover {
+    text-decoration: underline;
+}
+#cat-fact-section {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #5C4033;
+    width: 80%; /* Adjust the width as needed */
+}
+
+#cat-fact-text {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/*---------contact---------*/
+#contact {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+}
+.container {
+    color: 	#5C4033;
+}
+.subtitle {
+    margin: 5%;
+    font-size: 40px;
+}
+.row{
+    display: flex;
+}
+.contact-left {
+    flex-basis: 35%;
+}
+.contact-right {
+    flex-basis: 70%;
+}
+.contact-left p{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #5C4033;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.linked-in a{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.linked-in a i{
+    margin-top: 30px;
+    color: #5C4033;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.button{
+    margin-left: 30px;
+    margin-top: 30px;
+    display: inline-block;
+    background-color: #fff;
+    opacity: 0.7;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.5s, transform 0.5s;
+    color: #5C4033;
+}
+.button:hover {
+    background-color: rgb(197, 196, 196);
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: white;
+    opacity: 0.7;
+    padding: 15px;
+    margin: 15px 0;
+    color: #5C4033;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .button2{
+    padding: 14px 60px;
+    background-color: #fff;
+    opacity: 0.7;
+    border-radius: 10px;
+    transition: background-color 0.5s, transform 0.5s;
+    color: #5C4033;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+}
+#msg{
+    color: #5C4033;
+    margin-top: 20px;
+    display: block; 
+}
